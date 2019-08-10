@@ -1,0 +1,2 @@
+# RegularT
+regularjs support typescript 

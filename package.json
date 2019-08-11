@@ -1,0 +1,23 @@
+{
+  "name": "regularts",
+  "version": "1.0.1-2",
+  "description": "regularjs support typescript",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^3.5.3"
+  },
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lleohao/RegularT.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lleohao/RegularT/issues"
+  },
+  "homepage": "https://github.com/lleohao/RegularT#readme"
+}

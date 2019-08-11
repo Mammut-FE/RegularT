@@ -21,7 +21,7 @@ export abstract class RegularT<Props = any, State = any, Data = Props & State> {
         const regularTInstance = new regularT();
         const regularObject = Object.create({});
 
-        let prototype = regularTInstance;
+        let prototype: any = regularTInstance;
 
         while (prototype) {
             if (prototype.constructor === RegularT) {
@@ -31,6 +31,8 @@ export abstract class RegularT<Props = any, State = any, Data = Props & State> {
             Object.keys(prototype).forEach(key => {
                 regularObject[key] = prototype[key];
             });
+
+            prototype = prototype.__proto__;
         }
 
         delete regularObject.constructor;

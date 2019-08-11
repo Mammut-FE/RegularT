@@ -8,7 +8,11 @@
   "devDependencies": {
     "typescript": "^3.5.3"
   },
-  "scripts": {},
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsc -p tsconfig.json -w",
+    "prepublish": "npm run build"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lleohao/RegularT.git"

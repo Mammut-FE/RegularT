@@ -13,7 +13,7 @@ export abstract class RegularT<Props = any, State = any, Data = Props & State> {
         RegularJs = regular;
     }
 
-    static extend(regularT: {new(): RegularT}) {
+    static extend(regularT: { new(): RegularT }) {
         const regularTInstance = new regularT();
         const regularObject = Object.create({});
 
@@ -52,7 +52,7 @@ export abstract class RegularT<Props = any, State = any, Data = Props & State> {
 
     }
 
-    $watch<T extends keyof Data>(key: T | Partial<Data>, value?: Data[T]): WatchId {
+    $watch<T extends keyof Data>(key: T | Partial<Data>, watchHandle: (newValue: Data[T], oldValue?: Data[T]) => void): WatchId {
         return 0;
     }
 

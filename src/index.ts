@@ -75,4 +75,8 @@ export abstract class RegularT<Props = any, State = any, Data = Props & State> {
     $ref(name: string): RegularT {
         return this.$refs[name];
     }
+
+    $inject(params: any): void {
+
+    }
 }

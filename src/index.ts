@@ -48,6 +48,10 @@ export abstract class RegularT<Props = any, State = any, Data = Props & State> {
 
     }
 
+    supr(): void {
+
+    }
+
     $watch<T extends keyof Data>(key: T | Partial<Data>, value?: Data[T]): WatchId {
         return 0;
     }

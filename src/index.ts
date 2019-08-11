@@ -2,16 +2,12 @@ let RegularJs: any;
 
 export type WatchId = number;
 
-export interface Refs {
-    [key: string]: RegularT
-}
-
 export abstract class RegularT<Props = any, State = any, Data = Props & State> {
     name?: string;
     template?: string;
     data?: Data;
 
-    $refs: Refs;
+    $refs: any;
 
     static setRegular(regular: any) {
         RegularJs = regular;

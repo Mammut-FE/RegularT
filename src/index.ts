@@ -2,12 +2,17 @@ let RegularJs: any;
 
 export type WatchId = number;
 
-export abstract class RegularT<Props = any, State = any, Data = Props & State> {
-    name?: string;
-    template?: string;
-    data?: Data;
+export type Computed<Data> = {
+    [P in keyof Data]: Function | { get?: Function, set?: Function };
+}
+
+export abstract class RegularT<Props = {}, State = {}, Data = Props & State>{
+    name: string;
+    template: string;
+    data: Data;
 
     $refs: any;
+    computed: Computed<Partial<Data>>;
 
     static setRegular(regular: any) {
         RegularJs = regular;
@@ -76,7 +81,7 @@ export abstract class RegularT<Props = any, State = any, Data = Props & State> {
         return this.$refs[name];
     }
 
-    $inject(params: any): void {
+    $inject(target: any): void {
 
     }
 }

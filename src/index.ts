@@ -6,7 +6,7 @@ export type Computed<Data> = {
     [P in keyof Data]: Function | { get?: Function, set?: Function };
 }
 
-export abstract class RegularT<Props = {}, State = {}, Data = Props & State>{
+export abstract class RegularT<Props = {}, State = {}, Data = Props & State> {
     name: string;
     template: string;
     data: Data;
@@ -77,11 +77,17 @@ export abstract class RegularT<Props = {}, State = {}, Data = Props & State>{
 
     }
 
-    $ref(name: string): RegularT {
+    $ref(name: string) {
         return this.$refs[name];
     }
 
     $inject(target: any): void {
 
     }
+
+    $update(target?: keyof Data | Partial<Data>, value?: any) {
+
+    }
+
+    [key: string]: any;
 }

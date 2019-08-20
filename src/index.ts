@@ -6,6 +6,15 @@ export type Computed<Data> = {
     [P in keyof Data]: Function | { get?: Function, set?: Function };
 }
 
+export interface RegularEvent<T = any> {
+    button: any;
+    event: T;
+    origin: Element;
+    target: Element;
+    type: string;
+    which: number;
+}
+
 export abstract class RegularT<Props = {}, State = {}, Data = Props & State> {
     name: string;
     template: string;
@@ -73,7 +82,7 @@ export abstract class RegularT<Props = {}, State = {}, Data = Props & State> {
 
     }
 
-    $emit(name: string, params?: any): void {
+    $emit(name: string, p1?: any, p2?: any, p3?: any, p4?: any, p5?: any, p6?: any, p7?: any, p8?: any, p9?: any): void {
 
     }
 
